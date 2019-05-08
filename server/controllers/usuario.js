@@ -40,7 +40,7 @@ ctrl.lista = async (req, res) => {
 
 ctrl.agregar = async (req, res)=>{
   
-   req.body.password = betcryp.hashSync(req.body.password, 10);
+    req.body.password = betcryp.hashSync(req.body.password, 10);
 
     const usuario = new usuario_model(req.body);
 

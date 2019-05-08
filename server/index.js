@@ -17,14 +17,14 @@ const { Mongoose } = require('./database/database');
 //Settings
 
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs', exphbs({
-    defaultLayout: 'main',
-    layoutsDir: path.join(app.get('views'), 'layouts'),
-    partialsDir: path.join(app.get('views'), 'partials'),
-    extname: '.hbs'
-  }))
-  app.set('view engine', '.hbs');
+// app.set('views', path.join(__dirname, 'views'));
+// app.engine('.hbs', exphbs({
+//     defaultLayout: 'main',
+//     layoutsDir: path.join(app.get('views'), 'layouts'),
+//     partialsDir: path.join(app.get('views'), 'partials'),
+//     extname: '.hbs'
+//   }))
+//   app.set('view engine', '.hbs');
 
 
 
@@ -33,7 +33,7 @@ app.engine('.hbs', exphbs({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+    res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
